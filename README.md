@@ -23,5 +23,5 @@ ssh someinternalhost
 
 https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Proxies_and_Jump_Hosts
 
-bastionIP = 51.250.68.255
+bastion_IP = 51.250.68.255
 someinternalhost_IP = 10.128.0.27
