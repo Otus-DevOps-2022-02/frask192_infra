@@ -33,7 +33,7 @@ someinternalhost_IP = 10.128.0.27
 ####################################################################################
 ## HW 6
 
-testapp_IP = http://51.250.68.119/
+testapp_IP = 51.250.68.119
 testapp_port = 9292
 
 install_ruby.sh - installing ruby and dependencies
