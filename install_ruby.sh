@@ -1,7 +1,7 @@
 #!/bin/bash
-ECHO "##############################################"
+echo "##############################################"
 echo "INSTALL ruby-full ruby-bundler build-essential"
-ECHO "##############################################"
+echo "##############################################"
 
 sudo apt update
 sudo apt install -y ruby-full ruby-bundler build-essential
