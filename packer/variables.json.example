@@ -1,5 +1,5 @@
 {
   "fldr_id": "b1gkjflfljftljjftejv4f6k",
-  "sak_file": "/root/.secret/key.json",
+  "sak_file": "./key.json",
   "img_nm": "ubuntu-1604-lts"
 }
