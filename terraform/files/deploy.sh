@@ -11,6 +11,7 @@ echo "#############################"
 
 sudo apt update
 sudo apt upgrade -y
+sleep 3
 
 echo "#############################"
 echo "#      apt install git      #"
