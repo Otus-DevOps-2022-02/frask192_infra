@@ -64,3 +64,12 @@ solution - sudo apt-get install -y apt-transport-https ca-certificates
 packer build -var-file="./variables.json" ./immutable.json
 сам variables.json внесен в .gitignor, его примером является variables.json.example
 для запуски оброза с подготовленной средой и запуском по умолчанию puma.service создан скрипт congig-script/create-reddit-vm.sh
+
+#########################################################################################
+## NW 8
+
+описал файл main.tf
+файл outputs.tf используется для того, чтобы в конце apply вывести значения тех переменных, кторые мы там указали
+variables.tf - описание переменных
+сами переменных хранятся в terraform.tfvars
+можно указать свой файл с переменным при помощи -var-file= или одну конкретную команду -var= в момент запуска terraform validate/apply
