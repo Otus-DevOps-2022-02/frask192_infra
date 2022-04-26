@@ -39,3 +39,28 @@ testapp_port = 9292
 install_ruby.sh - installing ruby and dependencies
 install_mongodb.sh - installing bongodb and dependencies
 deploy.sh - installing reddir app and dependencies
+
+trouble - Err:7 https://repo.mongodb.org/apt/ubuntu xenial/mongodborg/4.2/multiverse amd64 Packages
+  404  Not Found
+
+  sudo apt-get install -y mongodb-org
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package mongodb-org
+
+solution - echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+
+trouble - E: The method driver /usr/lib/apt/methods/https could not be found.
+E: Failed to fetch https://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/4.2/InRelease
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+
+solution - sudo apt-get install -y apt-transport-https ca-certificates
+
+####################################################################################
+## HW 7
+
+для запуска пакера с переменными в файле необходимо добавить -var-file="./variables.json" в команду запуска
+packer build -var-file="./variables.json" ./immutable.json
+сам variables.json внесен в .gitignor, его примером является variables.json.example
+для запуски оброза с подготовленной средой и запуском по умолчанию puma.service создан скрипт congig-script/create-reddit-vm.sh
