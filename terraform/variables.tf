@@ -1,27 +1,27 @@
-variable cloud_id {
+variable "cloud_id" {
   description = "Cloud"
 }
-variable folder_id {
+variable "folder_id" {
   description = "Folder"
 }
-variable zone {
+variable "zone" {
   description = "Zone"
   # Значение по умолчанию
   default = "ru-central1-a"
 }
-variable image_id {
+variable "image_id" {
   description = "Disk image"
 }
-variable public_key_path {
+variable "public_key_path" {
   # Описание переменной
   description = "~/.ssh/id_rsa.pub"
 }
-variable service_account_key_file {
+variable "service_account_key_file" {
   description = "~/.secret/key.json"
 }
-variable private_key_path {
+variable "private_key_path" {
   description = "path to provate key"
 }
-variable subnet_id {
+variable "subnet_id" {
   description = "Subnet"
 }

@@ -9,8 +9,7 @@ echo "#############################"
 echo "#    apt update upgrade     #"
 echo "#############################"
 
-sudo apt update
-sudo apt upgrade -y
+# sudo apt upgrade
 sleep 3
 
 echo "#############################"

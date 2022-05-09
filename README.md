@@ -68,6 +68,11 @@ packer build -var-file="./variables.json" ./immutable.json
 #########################################################################################
 ## NW 8
 
+как создать сервисный аккаунт
+https://cloud.yandex.ru/docs/iam/quickstart-sa
+как создать ему ключ
+https://cloud.yandex.com/en-ru/docs/iam/operations/iam-token/create-for-sa#keys-create
+
 описал файл main.tf
 файл outputs.tf используется для того, чтобы в конце apply вывести значения тех переменных, кторые мы там указали
 variables.tf - описание переменных
