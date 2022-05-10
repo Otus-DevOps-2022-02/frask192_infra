@@ -12,6 +12,12 @@ variable "zone" {
 variable "image_id" {
   description = "Disk image"
 }
+variable "app_disk_image" {
+  description = "Disk image"
+}
+variable "db_disk_image" {
+  description = "Disk image"
+}
 variable "public_key_path" {
   # Описание переменной
   description = "~/.ssh/id_rsa.pub"

@@ -78,3 +78,9 @@ https://cloud.yandex.com/en-ru/docs/iam/operations/iam-token/create-for-sa#keys-
 variables.tf - описание переменных
 сами переменных хранятся в terraform.tfvars
 можно указать свой файл с переменным при помощи -var-file= или одну конкретную команду -var= в момент запуска terraform validate/apply
+
+#########################################################################################
+## NW 9
+
+регистри, где лежат модули
+https://registry.terraform.io/
