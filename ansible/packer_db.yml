@@ -4,15 +4,15 @@
   become: true
   tasks:
   # Добавим ключ репозитория для последующей работы с ним
-  - name: Add APT key
+  - name: Import public key
     apt_key:
-      id: 058f8b6b
-      keyserver: keyserver.ubuntu.com
+      url: 'https://www.mongodb.org/static/pgp/server-4.2.asc'
+      state: present
 
   # Подключаем репозиторий с пакетами mongodb
   - name: Add APT repository
     apt_repository:
-      repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
+      repo: deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
       state: present
 
   # Выполним установку пакета
