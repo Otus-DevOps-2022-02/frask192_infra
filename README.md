@@ -66,7 +66,7 @@ packer build -var-file="./variables.json" ./immutable.json
 для запуски оброза с подготовленной средой и запуском по умолчанию puma.service создан скрипт congig-script/create-reddit-vm.sh
 
 #########################################################################################
-## NW 8
+## HW 8
 
 как создать сервисный аккаунт
 https://cloud.yandex.ru/docs/iam/quickstart-sa
@@ -78,3 +78,9 @@ https://cloud.yandex.com/en-ru/docs/iam/operations/iam-token/create-for-sa#keys-
 variables.tf - описание переменных
 сами переменных хранятся в terraform.tfvars
 можно указать свой файл с переменным при помощи -var-file= или одну конкретную команду -var= в момент запуска terraform validate/apply
+
+#########################################################################################
+## HW 9
+
+регистри, где лежат модули
+https://registry.terraform.io/
