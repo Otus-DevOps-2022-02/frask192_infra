@@ -1,0 +1,28 @@
+- name: Install
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+  - ruby-full
+  - ruby-bundler
+  - build-essential
+  - git
+  tags: ruby
+
+# ---
+# - name: Install
+#   apt:
+#     pkg:
+#       - ruby-full
+#       - ruby-bundler
+#       - build-essential
+#       - git
+#     update_cache: yes
+#     state: present
+
+  # with_items:
+  # - ruby-full
+  # - ruby-bundler
+  # - build-essential
+  # - git

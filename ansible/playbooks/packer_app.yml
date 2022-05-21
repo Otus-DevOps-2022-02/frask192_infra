@@ -1,14 +1,18 @@
 ---
-  - name: Install Ruby && Bundler
-    hosts: all
-    become: true
-    tasks:
-    - name: Install
-      apt:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - ruby-full
-        - ruby-bundler
-        - build-essential
-        - git
+- name: Install Ruby && Bundler
+  hosts: all
+  become: true
+  roles:
+  - app
+  - jdauphant.nginx
+
+  # tasks:
+  # - name: Install
+  #   apt:
+  #     name: "{{ item }}"
+  #     state: present
+  #   with_items:
+  #     - ruby-full
+  #     - ruby-bundler
+  #     - build-essential
+  #     - git
