@@ -142,6 +142,8 @@ COMPOSE_PROJECT_NAME=OTUS - вот так в .env задается имя про
 #########################################################################################
 ## HW 16
 
-yc compute instance create   --name gitlab-ci-vm   --zone ru-central1-a   --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4   --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1804-lts,size=50   --ssh-key ~/.ssh/id_rsa.pub  --memory=4G --cores=2 --core-fraction=20 --platform=standard-v1
+yc compute instance create   --name gitlab-ci-vm   --zone ru-central1-a   --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4   --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1804-lts,size=50   --ssh-key ~/.ssh/id_rsa.pub  --memory=6G --cores=2 --core-fraction=20 --platform=standard-v3 --preemptible=true  ## делаем ВМ на ice lake, 20% процессорного времени и прерываемую для удешевления
 
-docker-machine create  --driver generic  --generic-ip-address=51.250.78.140 --generic-ssh-user yc-user  --generic-ssh-key ~/.ssh/id_rsa  docker-host
+docker-machine create  --driver generic  --generic-ip-address=IP --generic-ssh-user yc-user  --generic-ssh-key ~/.ssh/id_rsa  docker-host
+
+sudo docker exec -it gitlab_web_1 grep 'Password:' /etc/gitlab/initial_root_password ### узнать root пароль из контейнера ранера
