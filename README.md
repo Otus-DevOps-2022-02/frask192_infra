@@ -100,3 +100,21 @@ https://registry.terraform.io/
 ## HW 12
 
 сделали окружение stage,prod, добавили community роль, jdauphant.nginx из ansible-galaxy, "повесили" приложение puma на 80 порт благодаря nginx. Сделали роль для добавления пользователей и зашифровали credntials при помощи vault.
+
+#########################################################################################
+## HW 13
+
+перед началом использования необходимо выполнить "vagrand init", после чего скачать нуюный образ "vagrant box add ubuntu/xenial64" (образы лежат тут - https://app.vagrantup.com/boxes/search)
+узнать какие образы скачены - "vagrant box list"
+для определения сети, в какой работать VM
+cat /etc/vbox/networks.conf
+* 10.0.0.0/8
+провиженеры vagrand - https://www.vagrantup.com/docs/provisioning
+выполнить привеженинг для нужной ВМ - vagrant provision {{имя ВМ}}
+удалить ВМ - "vagrant destroy -f"
+
+перейти в директорию роли (roles/{{rolename}})
+создать заготовку для тестов молекула --- molecule init scenario -r {{rolename}} --driver-name=vagrant
+опсисать в roles/{{rolename}}/malecule/default/molecule.yml наши требования (в какой среде запускаем и чем)
+запуск роли для приведения к нужному состоянию - molecule converge
+запускаем проверку, получили мы то что хотели или нет - molecule verify
