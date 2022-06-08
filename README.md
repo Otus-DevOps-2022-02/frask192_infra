@@ -132,9 +132,16 @@ docker tag src dst - переименовать контейнер или сде
 залил образ в свой репозиторий
 
 #########################################################################################
-## HW 14
+## HW 15
 
 docker network connect <network> <container> - подключить контейнер к сети
 COMPOSE_PROJECT_NAME=OTUS - вот так в .env задается имя проекта
 
  создан docker-compose файл для сборки и запуска наших приложений
+
+#########################################################################################
+## HW 16
+
+yc compute instance create   --name gitlab-ci-vm   --zone ru-central1-a   --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4   --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1804-lts,size=50   --ssh-key ~/.ssh/id_rsa.pub  --memory=4G --cores=2 --core-fraction=20 --platform=standard-v1
+
+docker-machine create  --driver generic  --generic-ip-address=51.250.78.140 --generic-ssh-user yc-user  --generic-ssh-key ~/.ssh/id_rsa  docker-host
