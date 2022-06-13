@@ -147,3 +147,8 @@ yc compute instance create   --name gitlab-ci-vm   --zone ru-central1-a   --netw
 docker-machine create  --driver generic  --generic-ip-address=IP --generic-ssh-user yc-user  --generic-ssh-key ~/.ssh/id_rsa  docker-host
 
 sudo docker exec -it gitlab_web_1 grep 'Password:' /etc/gitlab/initial_root_password ### узнать root пароль из контейнера ранера
+
+#########################################################################################
+## HW 17
+
+yc compute instance create   --name docker-host   --zone ru-central1-a   --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4   --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1804-lts,size=15   --ssh-key ~/.ssh/id_rsa.pub  --memory=5G --cores=2 --core-fraction=20 --platform=standard-v3 --preemptible=true
